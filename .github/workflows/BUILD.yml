@@ -1,5 +1,6 @@
-name: Compilar Python a EXE
-
+- name: Compilar a ejecutable con icono
+      run: |
+        pyinstaller --noconfirm --onedir --windowed --icon="BT3_no_green.ico" "DBZ STORY EDITOR V1.2.py"
 on:
   push:
     branches: [ "main", "master" ]
