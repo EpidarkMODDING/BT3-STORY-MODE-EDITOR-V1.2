@@ -1,4 +1,3 @@
-YAML
 name: Compilar Python a EXE
 
 on:
@@ -25,18 +24,15 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pyinstaller
-        # Si usas librerías extra (ej: customtkinter, pillow), quita el # e instálalas:
+        # Si tu script usa librerías extra (ej: customtkinter, pillow), agrégalas aquí abajo:
         # pip install customtkinter pillow
 
     - name: Compilar a ejecutable con icono
       run: |
-        pyinstaller --noconfirm --onedir --windowed --icon="BT3_no_green.ico" "DBZ STORY EDITOR V1.2.py"
+        pyinstaller --noconfirm --onedir --windowed --icon="BT3_no_green.ico" "BT3 STORY EDITOR ESPAÑOL.py"
 
     - name: Subir ejecutable compilado como artefacto
       uses: actions/upload-artifact@v4
-      with:
-        name: DBZ-Story-Editor
-        path: dist/
       with:
         name: BT3-Story-Mode-Editor
         path: dist/
